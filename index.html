@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Сюрприз для Мирзы</title>
+
+  <!-- Подключаем стили -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Подключаем шрифт -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Фоновая музыка -->
+  <audio id="background-music" src="music.mp3" loop></audio>
+
+<!-- СЛАЙД 1 -->
+<div class="screen active" id="intro">
+  <h1>Happy Birthday</h1>
+  <button onclick="goToFlowers()">нажми</button>
+</div>
+
+<!-- СЛАЙД 2 -->
+<div class="screen" id="flowers">
+  <iframe src="https://fiqtor.github.io/flowers-for-someone/" allowfullscreen></iframe>
+  <div class="overlay-text">Seni seviyorum Mirza</div>
+  <button class="next-button" onclick="goToQuiz()">далее</button>
+</div>
+
+<!-- СЛАЙД 3 -->
+<div class="screen" id="quiz">
+  <h1 id="quiz-title">Выбери, что ты больше всего любишь…</h1>
+  <div class="quiz-options">
+    <button onclick="showLoveMessage()">Мои глаза</button>
+    <button onclick="showLoveMessage()">Мой голос</button>
+    <button onclick="showLoveMessage()">Мой запах</button>
+    <button onclick="showLoveMessage()">Все вместе</button>
+  </div>
+
+  <div id="love-block" class="hidden">
+    <p id="love-message" class="glow-text">А я люблю всё в тебе, зайчик</p>
+    <div class="hearts">
+      <span class="heart"></span>
+      <span class="heart"></span>
+      <span class="heart"></span>
+    </div>
+  </div>
+
+  <button id="next-button" class="hidden" onclick="goToCoupons()">Далее</button>
+</div>
+
+<!-- СЛАЙД 4 -->
+<div class="screen" id="coupons">
+  <h1 class="coupon-title">Специальные купоны только для Мирзы</h1>
+  <div class="coupon-container">
+    <div class="coupon-card">
+      <div class="coupon-icon">💋</div>
+      <h2>На минет</h2>
+      <p>Действителен только при отличном настроении</p>
+    </div>
+    <div class="coupon-card">
+      <div class="coupon-icon">🍽️</div>
+      <h2>На вкусный ужин от меня</h2>
+      <p>Можно использовать, когда захочешь почувствовать себя султаном</p>
+    </div>
+    <div class="coupon-card">
+      <div class="coupon-icon">🌅</div>
+      <h2>На секретное свидание</h2>
+      <p>Активируется при хорошей погоде</p>
+    </div>
+  </div>
+  <button onclick="goToTimer()" class="next-button">Далее</button>
+</div>
+
+<!-- СЛАЙД 5 -->
+<div class="screen" id="timer-slide">
+  <h1 class="timer-title">Мы уже вместе...</h1>
+  <div id="timer" class="timer-display">Загрузка...</div>
+  <div class="floating-hearts">
+    <span class="heart-icon">❤</span>
+    <span class="heart-icon">❤</span>
+    <span class="heart-icon">❤</span>
+  </div>
+  <button class="next-button" onclick="goToAudioSlide()">Далее</button>
+</div>
+
+<!-- СЛАЙД 6 – Аудио -->
+<div class="screen" id="audio-slide">
+  <h1 class="voice-title">Услишь мое сердце…</h1>
+  <audio id="voice-audio" controls>
+    <source src="Voice.mp3" type="audio/mpeg">
+    Твой браузер не поддерживает аудио.
+  </audio>
+  <button onclick="goToBox()">Далее</button>
+</div>
+
+<!-- СЛАЙД 7 — Подарок -->
+<div class="screen" id="box-slide">
+  <button class="next-button" onclick="goToFinalLetter()">Далее</button>
+
+  <h1 class="box-title">
+    Теперь ты можешь открыть свой подарок, но только вживую… А пока моё тебе письмо
+  </h1>
+
+  <div class="gift-box">
+    <div class="ribbon-horizontal"></div>
+    <div class="ribbon-vertical"></div>
+    <div class="lid"></div>
+    <div class="box-core"></div>
+    <div class="bow"></div>
+  </div>
+</div>
+
+<!-- СЛАЙД 8 — Письмо -->
+<div class="screen" id="final-letter">
+  <div class="letter-content">
+    <p>
+      Мой любимый, мой единственный,<br><br>
+
+      В этот особенный день, когда ты появился на свет, я не могу быть рядом — и потому беру в руки перо, чтобы отправить тебе своё сердце между строк.<br><br>
+
+      С днём рождения, мой мальчик.<br><br>
+
+      Я долго думала, как поздравить тебя, когда нас разделяют километры. Мне не передать прикосновением своей любви, не заглянуть в твои глаза. Но я могу написать — как писали раньше, когда ждали писем с трепетом, держали их под подушкой и перечитывали ночами.<br><br>
+
+      Ты — самый лучший. С тобой — тишина не пугает, а лечит. С тобой — я настоящая, такая, какой всегда хотела быть. Ты стал для меня не просто человеком, а целой вселенной. Спасибо тебе за твои добрые глаза, за мягкие щёки, за тёплый голос, за смех, который я помню даже сквозь расстояние. Спасибо за твои слова, за твою силу, за заботу, за упрямства, которые я тоже люблю. За всё, что в тебе — я люблю.<br><br>
+
+      Я вспоминаю наши вечера, голосовые, кружочки, то, как ты держал мою ладонь в своей. Я помню, как ты смотрел — как будто в самую душу. Перечитываю наши переписки, слушаю шкатулку… В каждом моменте ты. И я — с тобой. Я злюсь, радуюсь, скучаю, улыбаюсь… всё это — мы.<br><br>
+
+      Ты дал мне то, чего не было ни с кем. Настоящую близость, глубину, теплоту. С тобой я училась снова быть собой. И все эти воспоминания — как драгоценности в шкатулке моего сердца: вечерние разговоры, прогулки у моря, твой смех ночью, когда весь мир спит.<br><br>
+
+      Что бы ни случилось в жизни — ты уже вписан в мою. Навсегда.<br>
+      Ты — особенный.<br><br>
+
+      Я улыбаюсь, думая о тебе. И от всего сердца желаю тебе счастья.<br>
+      Пусть этот день принесёт тебе свет, радость и исполнение желаний. Ты достоин только самого настоящего.<br><br>
+
+      С днём рождения, Мирза Ахмедов.<br>
+      Я люблю тебя. Особенной, тихой, глубокой любовью, которая не нуждается в словах, чтобы быть.<br><br>
+
+      <strong>Твоя, А.</strong>
+    </p>
+  </div>
+</div>
+
+<script>
+  function goToFlowers() {
+    document.getElementById('intro').classList.remove('active');
+    document.getElementById('flowers').classList.add('active');
+    document.getElementById('background-music')?.play().catch(() => {});
+  }
+
+  function goToQuiz() {
+    document.getElementById('flowers').classList.remove('active');
+    document.getElementById('quiz').classList.add('active');
+  }
+
+  function showLoveMessage() {
+    const options = document.querySelector('.quiz-options');
+    const title = document.getElementById('quiz-title');
+    const loveBlock = document.getElementById('love-block');
+
+    options.classList.add('fade-out');
+    title.classList.add('fade-out');
+
+    setTimeout(() => {
+      options.style.display = 'none';
+      title.style.display = 'none';
+      loveBlock.classList.remove('hidden');
+      document.getElementById('next-button').classList.remove('hidden');
+    }, 800);
+  }
+
+  function goToCoupons() {
+    document.getElementById('quiz').classList.remove('active');
+    document.getElementById('coupons').classList.add('active');
+  }
+
+  function goToTimer() {
+    document.getElementById('coupons').classList.remove('active');
+    document.getElementById('timer-slide').classList.add('active');
+    startLoveTimer();
+  }
+
+  function startLoveTimer() {
+    const timerEl = document.getElementById('timer');
+    const startDate = new Date("2024-09-14T00:00:00");
+
+    function updateTimer() {
+      const now = new Date();
+      const diff = now - startDate;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      timerEl.innerText = `${days} дней, ${hours} часов, ${minutes} минут, ${seconds} секунд`;
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+
+    setTimeout(() => {
+      goToAudioSlide();
+    }, 10000);
+  }
+
+  function playVoice() {
+    const audio = document.getElementById('voice-audio');
+    audio.play().catch(() => alert("Не удалось воспроизвести голос"));
+  }
+
+  function goToAudioSlide() {
+    document.getElementById('timer-slide').classList.remove('active');
+    document.getElementById('audio-slide').classList.add('active');
+  }
+
+  function goToBox() {
+    document.getElementById('audio-slide').classList.remove('active');
+    document.getElementById('box-slide').classList.add('active');
+  }
+
+  const voiceAudio = document.getElementById('voice-audio');
+  const backgroundMusic = document.getElementById('background-music');
+
+  if (voiceAudio && backgroundMusic) {
+    voiceAudio.addEventListener('play', () => {
+      backgroundMusic.pause();
+    });
+
+    voiceAudio.addEventListener('ended', () => {
+      backgroundMusic.play().catch(() => {});
+    });
+
+    voiceAudio.addEventListener('pause', () => {
+      backgroundMusic.play().catch(() => {});
+    });
+  }
+
+  function goToFinalLetter() {
+    document.getElementById('box-slide').classList.remove('active');
+    document.getElementById('final-letter').classList.add('active');
+  }
+
+</script>
+
+</body>
+</html>
